@@ -80,7 +80,7 @@ class OwnerControllerTests {
 		PetType dog = new PetType();
 		dog.setName("dog");
 		max.setType(dog);
-		max.setName("Maximus");
+		max.setName("Maxi");
 		max.setBirthDate(LocalDate.now());
 		george.addPet(max);
 		max.setId(1);
@@ -97,7 +97,7 @@ class OwnerControllerTests {
 		given(this.owners.findById(TEST_OWNER_ID)).willReturn(Optional.of(george));
 		Visit visit = new Visit();
 		visit.setDate(LocalDate.now());
-		george.getPet("Max").getVisits().add(visit);
+		george.getPet("Maxi").getVisits().add(visit);
 
 	}
 
