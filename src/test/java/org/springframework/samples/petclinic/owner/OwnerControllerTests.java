@@ -80,7 +80,7 @@ class OwnerControllerTests {
 		PetType dog = new PetType();
 		dog.setName("dog");
 		max.setType(dog);
-		max.setName("Max");
+		max.setName("Maximus");
 		max.setBirthDate(LocalDate.now());
 		george.addPet(max);
 		max.setId(1);
