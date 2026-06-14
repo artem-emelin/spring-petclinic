@@ -74,6 +74,20 @@ class PetValidatorTests {
 		assertFalse(errors.hasErrors());
 	}
 
+	@Test
+	void validateExistingPetWithNullTypeHasNoTypeError() {
+		// Type is only required for new pets, so an existing pet (one that already has
+		// an id) with a null type must not produce a type error.
+		pet.setId(1);
+		pet.setName(petName);
+		pet.setType(null);
+		pet.setBirthDate(petBirthDate);
+
+		petValidator.validate(pet, errors);
+
+		assertFalse(errors.hasFieldErrors("type"));
+	}
+
 	@Nested
 	class ValidateHasErrors {
 
